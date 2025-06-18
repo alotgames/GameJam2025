@@ -15,12 +15,18 @@ public class NewMonoBehaviourScript : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.CompareTag("WeaponHB"))
+        Debug.Log("Collided with: " + other.gameObject.name + " Tag: " + other.gameObject.tag);
+        //Debug.Log("Player's Weapon Hit (Outside if statement) " + this.name);
+
+        Transform parent = other.transform.root;
+        //Checks if weaponHB was hit and if an attack is active
+        if (parent.gameObject.CompareTag("Player") && PlayerAttack.instance.getAttkActive())
         {
             //Gets the point script
-            other.GetComponent<PointSys>().AddPoints(pointVal);
+            PointSys.instance.AddPoints(pointVal);
+            //other.GetComponent<PointSys>().AddPoints(pointVal);
             Debug.Log("Player's Weapon Hit" + this.name);
             Destroy(gameObject);
         }
