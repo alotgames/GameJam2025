@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6221425950066321737}
   - component: {fileID: -7045338303027593882}
   - component: {fileID: -6582756784360759225}
-  - component: {fileID: 2571945965785137049}
   m_Layer: 0
   m_Name: EnemyBottom
   m_TagString: Untagged
@@ -192,17 +191,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointVal: 2
---- !u!114 &2571945965785137049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7082784850647717751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd280d7b5796594aa0feb1efa83d39c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointsText: {fileID: 0}
-  points: 0

@@ -16,8 +16,14 @@ public class EnemyMov : MonoBehaviour
     {
         transform.position += new Vector3(move, 0f, 0f) * movSpeed * Time.deltaTime;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if (collision.CompareTag("Despawn"))
+        {
+            Debug.Log("Despawned " + this.gameObject);
+            Destroy(gameObject);
+        }
     }
+
 }
