@@ -6,6 +6,7 @@ TagManager:
   tags:
   - WeaponHB
   - Despawn
+  - PlayerHB
   layers:
   - Default
   - TransparentFX
