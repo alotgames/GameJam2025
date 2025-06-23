@@ -30,5 +30,13 @@ public class NewMonoBehaviourScript : MonoBehaviour
             Debug.Log("Player's Weapon Hit" + this.name);
             Destroy(gameObject);
         }
+        // if enemy collides with the player, they take damage
+        else if(parent.gameObject.CompareTag("Player") && !PlayerAttack.instance.getAttkActive())
+        {
+            //Makes player take damage
+            HealthSys.instance.playerTakesDamage();
+            Debug.Log("Player took 1 Heart of Dmg");
+            Destroy(gameObject);
+        }
     }
 }
