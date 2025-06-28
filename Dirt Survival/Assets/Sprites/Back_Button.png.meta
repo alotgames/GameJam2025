@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e0d6e87615a3c994fa982460bf48f1c3
+guid: 5e02c04cd76f805409c16f232114b4ab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4593417511490131565
-    second: heart_dirtGame_full_0
+      213: -2612257301339723111
+    second: Back_Button_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: heart_dirtGame_full_0
+      name: Back_Button_0
       rect:
         serializedVersion: 2
         x: 4
-        y: 12
-        width: 216
-        height: 202
+        y: 4
+        width: 12
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d669d65c3e81fbf30800000000000000
-      internalID: 4593417511490131565
+      spriteID: 99aa9b323d56fbbd0800000000000000
+      internalID: -2612257301339723111
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      heart_dirtGame_full_0: 4593417511490131565
+      Back_Button_0: -2612257301339723111
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
