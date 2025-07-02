@@ -17,7 +17,7 @@ public class PlayerMov : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // If the left or right arrow key is held it allows th eplayer to move
         horzIn = 0f;
@@ -61,6 +61,9 @@ public class PlayerMov : MonoBehaviour
     // Makes it so jumping is only available when on the ground
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        isJumping = false;
+        // Fixes bug where player could jump off of enemies
+        if (collision.gameObject.CompareTag("Enemy") == false) {
+            isJumping = false;
+        }
     }
 }

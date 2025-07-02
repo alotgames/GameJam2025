@@ -1,43 +1,34 @@
 fileFormatVersion: 2
-guid: 6d7cd4f7505dc674c891ca8946cfd98b
+guid: a75445bb16444f14f96fdf9c734945cc
 AssetOrigin:
   serializedVersion: 1
-  productId: 167949
-  packageName: Monsters_Creatures_Fantasy
-  packageVersion: 1.0
-  assetPath: Assets/Monsters Creatures Fantasy/Sprites/Flying eye/Flight.png
-  uploadId: 365724
+  productId: 165188
+  packageName: Hero Knight - Pixel Art
+  packageVersion: 1.2
+  assetPath: Assets/Hero Knight - Pixel Art/Sprites/BlockFlash.png
+  uploadId: 447637
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4795363162621231457
-    second: Flight_0
+      213: 21300000
+    second: BlockFlash_0
   - first:
-      213: -3652676412848291748
-    second: Flight_1
+      213: 21300002
+    second: BlockFlash_1
   - first:
-      213: -596950462376016933
-    second: Flight_2
+      213: 21300004
+    second: BlockFlash_2
   - first:
-      213: -4538786591655478766
-    second: Flight_3
+      213: 21300006
+    second: BlockFlash_3
   - first:
-      213: 8639066506597270619
-    second: Flight_4
-  - first:
-      213: -4262185617143388622
-    second: Flight_5
-  - first:
-      213: 5066340549283584134
-    second: Flight_6
-  - first:
-      213: 7784096630628774620
-    second: Flight_7
+      213: 21300008
+    second: BlockFlash_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -79,7 +70,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,14 +94,14 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 4
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -123,33 +114,7 @@ TextureImporter:
     overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Lumin
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
@@ -162,18 +127,18 @@ TextureImporter:
     overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Flight_0
+      name: BlockFlash_0
       rect:
         serializedVersion: 2
-        x: 57
-        y: 58
-        width: 41
-        height: 31
+        x: 0
+        y: 0
+        width: 50
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b60f3b428266f641882fff33b3d5e5a
-      internalID: -4795363162621231457
+      spriteID: 5a8e45cbeeec150438855e8051732d67
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flight_1
+      name: BlockFlash_1
       rect:
         serializedVersion: 2
-        x: 207
-        y: 58
-        width: 41
-        height: 32
+        x: 50
+        y: 0
+        width: 50
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,20 +169,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10226d6044353eb4fa948bd574ea736f
-      internalID: -3652676412848291748
+      spriteID: cafd881ed928a03448fed790675f948a
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flight_2
+      name: BlockFlash_2
       rect:
         serializedVersion: 2
-        x: 357
-        y: 61
-        width: 40
-        height: 29
+        x: 100
+        y: 0
+        width: 50
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +191,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ad4b872376ed3e4486247ba89b9be8d
-      internalID: -596950462376016933
+      spriteID: e660ff5bb51687146ab8559df55165e9
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flight_3
+      name: BlockFlash_3
       rect:
         serializedVersion: 2
-        x: 508
-        y: 60
-        width: 39
-        height: 25
+        x: 150
+        y: 0
+        width: 50
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6175273388504464690a5ffdb4b6e945
-      internalID: -4538786591655478766
+      spriteID: 99c7053281132034f89f9e0d1726e9a4
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flight_4
+      name: BlockFlash_4
       rect:
         serializedVersion: 2
-        x: 657
-        y: 60
-        width: 40
-        height: 24
+        x: 200
+        y: 0
+        width: 50
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,74 +235,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b82a24c2d9256047b65475093a49a14
-      internalID: 8639066506597270619
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Flight_5
-      rect:
-        serializedVersion: 2
-        x: 806
-        y: 59
-        width: 42
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b03cc7e3212354449903d7c9f940e356
-      internalID: -4262185617143388622
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Flight_6
-      rect:
-        serializedVersion: 2
-        x: 958
-        y: 58
-        width: 40
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d78b014b5797f54bb5585f62835f8ab
-      internalID: 5066340549283584134
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Flight_7
-      rect:
-        serializedVersion: 2
-        x: 1108
-        y: 57
-        width: 40
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33f8db84057f2e143a48f74752555df2
-      internalID: 7784096630628774620
+      spriteID: 211063e8f5bf9d4418a21d1302a5d06a
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
@@ -346,7 +245,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: b509f04e98c68a34d934f3ee5c9bcfad
     internalID: 0
     vertices: []
     indices: 
@@ -356,14 +255,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Flight_0: -4795363162621231457
-      Flight_1: -3652676412848291748
-      Flight_2: -596950462376016933
-      Flight_3: -4538786591655478766
-      Flight_4: 8639066506597270619
-      Flight_5: -4262185617143388622
-      Flight_6: 5066340549283584134
-      Flight_7: 7784096630628774620
+      BlockFlash_0: 21300000
+      BlockFlash_1: 21300002
+      BlockFlash_2: 21300004
+      BlockFlash_3: 21300006
+      BlockFlash_4: 21300008
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
