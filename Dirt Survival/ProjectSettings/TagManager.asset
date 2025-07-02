@@ -7,6 +7,7 @@ TagManager:
   - WeaponHB
   - Despawn
   - PlayerHB
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -28,10 +28,11 @@ public class NewMonoBehaviourScript : MonoBehaviour
             PointSys.instance.AddPoints(pointVal);
             //other.GetComponent<PointSys>().AddPoints(pointVal);
             Debug.Log("Player's Weapon Hit" + this.name);
+            //GetComponent<enemy_animation>().OnEnemyDeath();
             Destroy(gameObject);
         }
         // if enemy collides with the player, they take damage
-        else if(parent.gameObject.CompareTag("Player") && !PlayerAttack.instance.getAttkActive())
+        else if(parent.gameObject.CompareTag("Player"))
         {
             //Makes player take damage
             HealthSys.instance.playerTakesDamage();
