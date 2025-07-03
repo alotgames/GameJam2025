@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class HealthSys : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class HealthSys : MonoBehaviour
 
     int health;
     private bool isDead = false;
+    public Animator animator;
 
     private void Awake()
     {
@@ -37,10 +39,8 @@ public class HealthSys : MonoBehaviour
                     heart1.SetActive(false);
                     heart2.SetActive(false);
                     heart3.SetActive(false);
-                    gameManager.gameOver();
-                    isDead = true;
-                    // essientially freezes the background on death
-                    Time.timeScale = 0f;
+
+                    StartCoroutine(HandleDeath());
                     break;
 
                 case 1:
@@ -68,5 +68,22 @@ public class HealthSys : MonoBehaviour
     public void playerTakesDamage()
     {
         health -= 1;
+    }
+
+    IEnumerator HandleDeath()
+    {
+
+        animator.SetTrigger("Died");
+        //Allows for the death animation to play and ignore the time freeze
+        animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+
+        yield return new WaitForSeconds(1f);
+        gameManager.gameOver();
+        isDead = true;
+
+        // essientially freezes the background on death
+        Time.timeScale = 0f;
+
+
     }
 }
