@@ -5,7 +5,7 @@ public class PlayerAttack : MonoBehaviour
     public static PlayerAttack instance;
 
     //Allows for the time that the HitBox stays active
-    public float attkTime = 2f;
+    public float attkTime = 0.3f;
     private float timer = 0f;
     private bool attkActive = false;
 
@@ -17,12 +17,17 @@ public class PlayerAttack : MonoBehaviour
     public Collider2D attkUpCollider;
     public Collider2D attkMidCollider;
     public Collider2D attkDownCollider;
+
+    //Animation control
+    Animator animator;
     private void Awake()
     {
         instance = this;
     }
     private void Start()
     {
+        animator = GetComponent<Animator>();
+
         if(attkUp != null && attkMid != null && attkDown != null)
         {
             attkUp.enabled = false;
@@ -41,24 +46,30 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A) && attkActive == false)
         {
+            animator.SetBool("attkUp", true);
             attkUp.enabled = true;
             attkUpCollider.enabled = true;
             timer = attkTime;
             attkActive = true;
+
         }
         else if(Input.GetKeyDown(KeyCode.S) && attkActive == false)
         {
+            animator.SetBool("attkMid", true);
             attkMid.enabled = true;
             attkMidCollider.enabled = true;
             timer = attkTime;
             attkActive = true;
+
         }
         else if(Input.GetKeyDown(KeyCode.D) && attkActive == false)
         {
+            animator.SetBool("attkDown", true);
             attkDown.enabled = true;
             attkDownCollider.enabled = true;
             timer = attkTime;
             attkActive = true;
+
         }
 
         //Countdown on Hitbox
@@ -77,6 +88,10 @@ public class PlayerAttack : MonoBehaviour
                 attkUpCollider.enabled = false;
                 attkMidCollider.enabled = false;
                 attkDownCollider.enabled = false;
+
+                animator.SetBool("attkMid", false);
+                animator.SetBool("attkDown", false);
+                animator.SetBool("attkUp", false);
             }
         }
     }

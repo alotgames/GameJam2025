@@ -1,19 +1,22 @@
 using UnityEngine;
+using System; 
 
 public class PlayerMov : MonoBehaviour
 {
     float horzIn;
     float moveSpeed = 5f;
     Rigidbody2D rb;
+    Animator animator;
     bool facingRight = false;
     float jumpPower = 4f;
-    bool isJumping = false;
-    
+    bool isGrounded = true;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //initializes 2D body
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -25,23 +28,33 @@ public class PlayerMov : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             horzIn = 1f;
+            animator.SetBool("isMoving", true);
         }
         // moves left
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             horzIn = -1f;
+            animator.SetBool("isMoving", true);
         }
-        
+        else
+        {
+            //stops walking animation if no input from arrow keys is detected
+            animator.SetBool("isMoving", false);
+        }
         // Keeps it consistent across all devices
         transform.position += new Vector3(horzIn, 0f, 0f) * moveSpeed * Time.deltaTime;
         flipSprite();
 
         // Checks if jump is detected
-        if(Input.GetButtonDown("Jump") && !isJumping)
+        if(Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
-            isJumping = true;
+            isGrounded = false;
+            animator.SetBool("isJumping", !isGrounded);
         }
+
+        animator.SetFloat("xVelocity", Math.Abs(rb.linearVelocity.x));
+        animator.SetFloat("yVelocity", rb.linearVelocity.y);
     }
 
     // Makes sprite face the direction its moving
@@ -59,11 +72,13 @@ public class PlayerMov : MonoBehaviour
     }
 
     // Makes it so jumping is only available when on the ground
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         // Fixes bug where player could jump off of enemies
-        if (collision.gameObject.CompareTag("Enemy") == false) {
-            isJumping = false;
+        if (collision.gameObject.CompareTag("Enemy") == false)
+        {
+            isGrounded = true;
+            animator.SetBool("isJumping", !isGrounded);
         }
     }
 }
