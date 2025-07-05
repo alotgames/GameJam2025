@@ -7,7 +7,10 @@ public class PlayerAttack : MonoBehaviour
     //Allows for the time that the HitBox stays active
     public float attkTime = 0.3f;
     private float timer = 0f;
-    private bool attkActive = false;
+    //private bool attkActive = false;
+    private bool upAttkActive = false;
+    private bool midAttkActive = false;
+    private bool downAttkActive = false;
 
     // Lets me input the HitBox sprites
     public SpriteRenderer attkUp;
@@ -19,7 +22,7 @@ public class PlayerAttack : MonoBehaviour
     public Collider2D attkDownCollider;
 
     //Animation control
-    Animator animator;
+    private Animator animator;
     private void Awake()
     {
         instance = this;
@@ -28,7 +31,7 @@ public class PlayerAttack : MonoBehaviour
     {
         animator = GetComponent<Animator>();
 
-        if(attkUp != null && attkMid != null && attkDown != null)
+        if (attkUp != null && attkMid != null && attkDown != null)
         {
             attkUp.enabled = false;
             attkMid.enabled = false;
@@ -38,42 +41,42 @@ public class PlayerAttack : MonoBehaviour
             attkMidCollider.enabled = false;
             attkDownCollider.enabled = false;
         }
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) && attkActive == false)
+        if (Input.GetKeyDown(KeyCode.A) && upAttkActive == false)
         {
             animator.SetBool("attkUp", true);
             attkUp.enabled = true;
             attkUpCollider.enabled = true;
             timer = attkTime;
-            attkActive = true;
+            upAttkActive = true;
 
         }
-        else if(Input.GetKeyDown(KeyCode.S) && attkActive == false)
+        else if (Input.GetKeyDown(KeyCode.S) && midAttkActive == false)
         {
             animator.SetBool("attkMid", true);
             attkMid.enabled = true;
             attkMidCollider.enabled = true;
             timer = attkTime;
-            attkActive = true;
+            midAttkActive = true;
 
         }
-        else if(Input.GetKeyDown(KeyCode.D) && attkActive == false)
+        else if (Input.GetKeyDown(KeyCode.D) && downAttkActive == false)
         {
             animator.SetBool("attkDown", true);
             attkDown.enabled = true;
             attkDownCollider.enabled = true;
             timer = attkTime;
-            attkActive = true;
+            downAttkActive = true;
 
         }
 
         //Countdown on Hitbox
-        if (attkActive)
+        if (upAttkActive || midAttkActive || downAttkActive)
         {
             timer -= Time.deltaTime;
             
@@ -83,7 +86,10 @@ public class PlayerAttack : MonoBehaviour
                 attkUp.enabled = false;
                 attkMid.enabled = false;
                 attkDown.enabled = false;
-                attkActive = false;
+                
+                upAttkActive = false;
+                midAttkActive = false;
+                downAttkActive = false;
 
                 attkUpCollider.enabled = false;
                 attkMidCollider.enabled = false;
@@ -96,8 +102,20 @@ public class PlayerAttack : MonoBehaviour
         }
     }
     // getter for attkActive
-    public bool getAttkActive()
+    
+    public bool getUpAttkActive()
     {
-        return attkActive;
+        return upAttkActive;
     }
+
+    public bool getMidAttkActive()
+    {
+        return midAttkActive;
+    }
+
+    public bool getDownAttkActive()
+    {
+        return downAttkActive;
+    }
+    
 }
