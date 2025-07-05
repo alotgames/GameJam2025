@@ -20,9 +20,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
         Debug.Log("Collided with: " + other.gameObject.name + " Tag: " + other.gameObject.tag);
         //Debug.Log("Player's Weapon Hit (Outside if statement) " + this.name);
 
-        Transform parent = other.transform.root;
+        //Transform parent = other.transform.root;
         //Checks if weaponHB was hit and if an attack is active
-        if (parent.gameObject.CompareTag("Player") && PlayerAttack.instance.getAttkActive())
+        if (other.gameObject.CompareTag("WeaponHB") && PlayerAttack.instance.getUpAttkActive() || PlayerAttack.instance.getMidAttkActive() || PlayerAttack.instance.getDownAttkActive())
         {
             //Gets the point script
             PointSys.instance.AddPoints(pointVal);
@@ -32,7 +32,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
             Destroy(gameObject);
         }
         // if enemy collides with the player, they take damage
-        else if(parent.gameObject.CompareTag("Player"))
+        else if(other.gameObject.CompareTag("Player"))
         {
             //Makes player take damage
             HealthSys.instance.playerTakesDamage();

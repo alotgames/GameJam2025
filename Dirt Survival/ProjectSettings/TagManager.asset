@@ -8,6 +8,7 @@ TagManager:
   - Despawn
   - PlayerHB
   - Enemy
+  - Ground
   layers:
   - Default
   - TransparentFX

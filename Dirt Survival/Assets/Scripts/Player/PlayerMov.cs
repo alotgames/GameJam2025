@@ -5,11 +5,11 @@ public class PlayerMov : MonoBehaviour
 {
     float horzIn;
     float moveSpeed = 5f;
-    Rigidbody2D rb;
-    Animator animator;
+    private Rigidbody2D rb;
+    private Animator animator;
     bool facingRight = false;
     float jumpPower = 4f;
-    bool isGrounded = true;
+    bool isJumping = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,14 +46,15 @@ public class PlayerMov : MonoBehaviour
         flipSprite();
 
         // Checks if jump is detected
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        if(Input.GetButtonDown("Jump") && !isJumping)
         {
+            Debug.Log("Jumping is set to true");
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
-            isGrounded = false;
-            animator.SetBool("isJumping", !isGrounded);
+            isJumping = true;
+            animator.SetBool("isJumping", true);
         }
 
-        animator.SetFloat("xVelocity", Math.Abs(rb.linearVelocity.x));
+        animator.SetFloat("xVelocity", Mathf.Abs(rb.linearVelocity.x));
         animator.SetFloat("yVelocity", rb.linearVelocity.y);
     }
 
@@ -72,13 +73,15 @@ public class PlayerMov : MonoBehaviour
     }
 
     // Makes it so jumping is only available when on the ground
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Player Collides With floor");
         // Fixes bug where player could jump off of enemies
         if (collision.gameObject.CompareTag("Enemy") == false)
         {
-            isGrounded = true;
-            animator.SetBool("isJumping", !isGrounded);
+            Debug.Log("Jumping is set to false");
+            isJumping = false;
+            animator.SetBool("isJumping", false);
         }
     }
 }
