@@ -2,14 +2,15 @@ using UnityEngine;
 
 public class BackgroundMov : MonoBehaviour
 {
-    private float startPos, length;
+    private float length;
+    private float initialPosX;
     public GameObject cam;
     public float parallaxEffect; // The speed that the background will move relative to the camera
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        startPos = transform.position.x;
+        initialPosX = transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
 
     }
@@ -18,14 +19,18 @@ public class BackgroundMov : MonoBehaviour
     void FixedUpdate()
     {
         //Calcs the dist background move based on cam movement
-        float distance = cam.transform.position.x * parallaxEffect; // 0 = move with cam || 1 = won't move || 0.5 will move at half speed
-        float movement = cam.transform.position.x * (1 - parallaxEffect);
+        float camX = cam.transform.position.x;
+        float distance = camX * parallaxEffect; // 0 = move with cam || 1 = won't move || 0.5 will move at half speed
         
-        transform.position = new Vector3(startPos + distance, transform.position.y, transform.position.z);
-    
+        transform.position = new Vector3(initialPosX + distance, transform.position.y, transform.position.z);
+
+        float relativeCamMovement = camX * (1 - parallaxEffect);
+        float temp = relativeCamMovement % length;
+
+        transform.position = new Vector3(initialPosX + distance + temp, transform.position.y, transform.position.z);
         //If background has reached the end of its length adjust its position
            //for infinite scrolling
-        if(movement > startPos + length)
+        /*if(movement > startPos + length)
         {
             startPos += length;
         }
@@ -33,5 +38,7 @@ public class BackgroundMov : MonoBehaviour
         {
             startPos -= length;
         }
+        */
     }
+    
 }
