@@ -49,6 +49,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A) && upAttkActive == false)
         {
+            Debug.Log("Up Attack is Active");
             animator.SetBool("attkUp", true);
             attkUp.enabled = true;
             attkUpCollider.enabled = true;

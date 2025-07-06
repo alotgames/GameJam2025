@@ -5,7 +5,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyDown;
     public Transform spawnPoint;
     private float timer = 0f;
-    private float spawnDelay = 2f;
+    public float spawnDelay = 2f;
     private float RNG;
 
     public void SpawnObject()
